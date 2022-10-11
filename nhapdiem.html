@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var a;
+      var b;
+      var c;
+
+      let Physical = parseInt("a");
+      let Chemical = parseInt("b");
+      let sinhhoc = parseInt("c");
+      Physical = prompt("Nhập điểm môn Vật lý:");
+      Chemical = prompt("Nhập điểm môn Hoá Học");
+      sinhhoc = prompt("Nhập điểm môn Sinh học");
+      let avarage = (Number(Physical) + Number(Chemical) + Number(sinhhoc)) / 3;
+      let sum = Number(Physical) + Number(Chemical) + Number(sinhhoc);
+
+      document.write("Điểm trung bình:" + avarage);
+      document.write("<br>");
+      document.write("Tổng điểm là:" + sum);
+    </script>
+  </body>
+</html>
