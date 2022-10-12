@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Caculator</h1>
+    <div>Nhập số thứ 1:</div>
+    <input style="width: 60px" type="number" name="" id="inp1" />
+    <div>Nhập số thứ 2</div>
+    <input style="width: 60px" type="number" name="" id="inp2" />
+    <div>Kết quả:</div>
+    <button style="width: 60px" id="result">0</button>
+    <!-- tai sao ko dung duoc input de print ket qua -->
+    <br />
+    <button style="margin-top: 5px" id="sum" onclick="input1 ()">
+      Addition(+)
+    </button>
+    <button onclick="input2 ()">Subtraction(-)</button>
+    <button onclick="input3 ()">Multiplication(X)</button>
+    <button onclick="input4 ()">Division(/)</button>
+
+    <script>
+      function input1() {
+        let select1 = document.getElementById("inp1").value;
+        let select2 = document.getElementById("inp2").value;
+
+        document.getElementById("result").innerHTML =
+          Number(select1) + Number(select2);
+      }
+      function input2() {
+        let select1 = document.getElementById("inp1").value;
+        let select2 = document.getElementById("inp2").value;
+
+        document.getElementById("result").innerHTML =
+          Number(select1) - Number(select2);
+      }
+      function input3() {
+        let select1 = document.getElementById("inp1").value;
+        let select2 = document.getElementById("inp2").value;
+
+        document.getElementById("result").innerHTML =
+          Number(select1) * Number(select2);
+      }
+      function input4() {
+        let select1 = document.getElementById("inp1").value;
+        let select2 = document.getElementById("inp2").value;
+
+        document.getElementById("result").innerHTML =
+          Number(select1) / Number(select2);
+      }
+    </script>
+  </body>
+</html>
