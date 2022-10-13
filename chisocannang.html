@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Tính chỉ số cân nặng</h1>
+    <label for="cannang">Nhập cân nặng: (kg)</label>
+    <input type="text" name="" id="can-nang" /> <br />
+    <br />
+    <label for="chieucao">Nhập chiều cao: (m)</label>
+    <input type="text" name="" id="chieu-cao" /> <br /><br />
+    <button id="check">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+      let element = document.getElementById("check");
+      element.addEventListener("click", myfunction);
+      function myfunction() {
+        let weight = document.getElementById("can-nang");
+        let height = document.getElementById("chieu-cao");
+        let bmi =
+          Number(weight.value) / (Number(height.value) * Number(height.value));
+        if (bmi < 18) {
+          document.getElementById("result").innerHTML =
+            "Chỉ số BMI là:" + bmi + "Underweight";
+        } else if (bmi >= 18 && bmi < 25) {
+          document.getElementById("result").innerHTML =
+            "Chỉ số BMI là:" + bmi + "Normal";
+        } else if (bmi >= 25 && bmi < 30) {
+          document.getElementById("result").innerHTML =
+            "Chỉ số BMI là:" + bmi + "Overweight";
+        } else {
+          document.getElementById("result").innerHTML =
+            "Chỉ số BMI là:" + bmi + ", Obese";
+        }
+      }
+    </script>
+  </body>
+</html>
