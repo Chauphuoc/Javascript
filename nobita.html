@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="goAhead ()">
+    <img
+      id="nobita"
+      src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png"
+      style="position: absolute; left: 0; top: 0"
+      height="100"
+      width="80"
+    />
+    <script>
+      function goAhead() {
+        window.addEventListener("keydown", moveSelect);
+      }
+      function toparrow() {
+        let movetop = document.getElementById("nobita");
+        movetop.style.top = parseInt(movetop.style.top) - 10 + "px";
+      }
+      function Belowarrow() {
+        let movebelow = document.getElementById("nobita");
+        movebelow.style.top = parseInt(movebelow.style.top) + 10 + "px";
+      }
+      function leftarrow() {
+        let moveleft = document.getElementById("nobita");
+        moveleft.style.left = parseInt(moveleft.style.left) - 10 + "px";
+      }
+      function rightarrow() {
+        let moveright = document.getElementById("nobita");
+        moveright.style.left = parseInt(moveright.style.left) + 10 + "px";
+      }
+      //   event co the dung cho nhieu truong hop su kien khac duoc khong, cach su dung the nao
+      // tai sao khong dung number thay cho parseint duoc
+      function moveSelect(event) {
+        switch (event.keyCode) {
+          case 37:
+            leftarrow();
+            break;
+          case 38:
+            toparrow();
+            break;
+          case 39:
+            rightarrow();
+            break;
+          case 40:
+            Belowarrow();
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
