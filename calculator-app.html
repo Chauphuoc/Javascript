@@ -9,78 +9,108 @@
   <style>
     body {
       box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      background: linear-gradient(
+        to right,
+        rgb(61, 61, 235),
+        rgb(127, 173, 216)
+      );
+      display: flex;
+
+      justify-content: center;
+    }
+
+    .screen {
+      width: 412px;
+      height: 70px;
+
+      border-bottom: 3px solid rgb(202, 198, 198);
+    }
+    .container {
+      width: 412px;
       display: flex;
       align-items: center;
+      flex-direction: column;
       justify-content: center;
-      background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+      margin-top: 100px;
+      border: 2px solid grey;
+      box-shadow: 0 0 30px rgb(95, 93, 93);
     }
-    table {
-     width: 400px;
-      border: 3px solid grey;
-      box-shadow: 0 20px 38px gray;
-      margin-top: 30px;
-      background-color: white;
-      padding: 10px 20px;
+    .keyboard {
+      width: 100%;
+      display: grid;
+
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    input {
-      width: 100% ;
-      height: auto ;
+    button {
+      height: 60px;
+      border: 1px solid white;
       cursor: pointer;
-      color: black;
-      background-color: white;
-      font-size: 40px;
+      transition: background-color 0.5s;
+      font-weight: bold;
     }
-   td {
-    width: 40px;
-   }
-   
+    button:hover {
+      background-color: rgb(90, 88, 88);
+    }
+    .btn {
+      box-sizing: border-box;
+      width: 412px;
+      height: 100%;
+      border: none;
+      font-size: 35px;
+      padding-left: 10px;
+    }
+    .item-AC {
+      grid-column: 1 / span 2;
+      background-color: pink;
+    }
   </style>
   <body>
-    <table>
-      <tr>
-        <td colspan="3"><input type="text" id="result" style="width:98%;" /></td>
-        <td style="display:flex;width: 100%;" >
-          <input type="button" onclick="clear1 ()" id="clr"  value="C" ></input>
-        </td>
-      </tr>
-      <tr>
-        <td><input type="button" onclick="Num('1')" value="1"></input></td>
-        <td><input type="button" onclick="Num('2')" value="2"></input></td>
-        <td><input type="button" onclick="Num('3')" value="3"></input></td>
-        <td><input type="button" onclick="Num('/')" value="/"></input></td>
-      </tr>
-      <tr>
-        <td><input type="button" onclick="Num('4')" value="4"></input></td>
-        <td><input type="button" onclick="Num('5')" value="5"></input></td>
-        <td><input type="button" onclick="Num('6')" value="6"></input></td>
-        <td><input type="button" onclick="Num('+')" value="+"></input></td>
-      </tr>
-      <tr>
-        <td><input type="button" onclick="Num('7')" value="7"></input></td>
-        <td><input type="button" onclick="Num('8')" value="8"></input></td>
-        <td><input type="button" onclick="Num('9')" value="9"></input></td>
-        <td><input type="button" onclick="Num('x')" value="x"></input></td>
-      </tr>
-      <tr>
-        <td><input type="button" onclick="Num('0')" value="0"></input></td>
-        <td><input type="button" onclick="equal('=')" value="="></input></td>
-        <td><input type="button" onclick="Num('.')" value="."></input></td>
-        <td><input type="button" onclick="Num('-')" value="-"></input></td>
-      </tr>
-    </table>
+    <div class="container">
+      <div class="screen">
+        <input class="btn" type="text" name="" id="inp" />
+      </div>
+
+      <div class="keyboard">
+        <button onclick="cleartotal ()" id="" class="item-AC" value="AC">
+          AC
+        </button>
+        <button onclick="clear1 ()" id="" class="" value="">DEL</button>
+        <button onclick="Num('+')" id="" class="" value="+">+</button>
+        <button onclick="Num('1')" id="" class="" value="1">1</button>
+        <button onclick="Num('2')" id="" class="" value="2">2</button>
+        <button onclick="Num('3')" id="" class="" value="3">3</button>
+        <button onclick="Num('-')" id="" class="" value="-">-</button>
+        <button onclick="Num('4')" id="" class="" value="4">4</button>
+        <button onclick="Num('5')" id="" class="" value="5">5</button>
+        <button onclick="Num('6')" id="" class="" value="6">6</button>
+        <button onclick="Num('x')" id="" class="" value="*">*</button>
+        <button onclick="Num('7')" id="" class="" value="7">7</button>
+        <button onclick="Num('8')" id="" class="" value="8">8</button>
+        <button onclick="Num('9')" id="" class="" value="9">9</button>
+        <button onclick="Num('/')" id="" class="" value="/">/</button>
+        <button onclick="Num('.')" id="" class="" value=".">.</button>
+        <button onclick="Num('0')" id="" class="" value="0">0</button>
+        <button onclick="Num('0')" id="" class="" value="0">00</button>
+        <button onclick="equal()" id="equal" class="" value="=">=</button>
+        <!-- lay gia tri o num ?? 
+        co luu y gi khi dat ten ham hay khong-->
+      </div>
+    </div>
     <script>
-     function Num (event) {
-      document.getElementById('result').value += event ;
-    
-     }
-     function equal () {
-      let input = document.getElementById('result').value 
-      let output = eval(input)
-      document.getElementById('result').value = output;
-     }
-     function clear1 () {
-      document.getElementById('result').value = '';
-     }
+      function Num(event) {
+        document.getElementById("inp").value += event;
+      }
+      function equal() {
+        let input1 = document.getElementById("inp").value;
+        let output = eval(input1);
+
+        document.getElementById("inp").value = output;
+      }
+      function cleartotal() {
+        document.getElementById("inp").value = "";
+      }
     </script>
   </body>
 </html>
