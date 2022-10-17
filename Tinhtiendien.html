@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style></style>
+  <body>
+    <div style="font-size: 20px">
+      <span>Nhập giá trị tiền điện:</span>
+      <input
+        style="width: 160px; height: 30px; font-size: 20px; text-align: center"
+        type="text"
+        id="inp"
+      />
+    </div>
+    <div style="margin-top: 15px; margin-bottom: 15px; font-size: 20px">
+      <span>Tổng tiền điện tháng:</span>
+      <input
+        style="width: 160px; height: 30px; font-size: 20px; text-align: center"
+        type="text"
+        name=""
+        id="bill"
+      />
+      <br />
+      <span id="note"></span>
+    </div>
+
+    <input
+      style="font-size: 15px; font-family: 'Times New Roman', Times, serif"
+      type="button"
+      name=""
+      id="result"
+      value="Tính"
+    />
+  </body>
+  <script>
+    // Cách 1: Sử dụng conditional statement if
+    // let price = parseInt(prompt("Số chữ của hộ gia đình:"));
+    // if (price >= 0 && price <= 50) {
+    //   console.log("Bậc 1. Giá điện: 1.678 đồng/kWh");
+    // }
+    // if (price > 50 && price <= 100) {
+    //   console.log("Bậc 2 (51 đến 100kWh): 1.734 đồng/kWh");
+    // }
+    // if (price > 100 && price <= 200) {
+    //   console.log("Bậc 3 (101 đến 200 kWh): 2.014 đồng/kWh");
+    // }
+    // if (price > 200 && price <= 300) {
+    //   console.log("Bậc 4 (201 đến 300 kWh): 2.536 đồng/kWh");
+    // }
+    // if (price > 300 && price <= 400) {
+    //   console.log("Bậc 5 (301 đến 400 kWh): 2.834 đồng/kWh");
+    // }
+    // if (price > 400) {
+    //   console.log("Bậc 6 (401 kWh trở lên): 2.927 đồng/kWh");
+    // }
+
+    // Cách 2: Sử dụng if else
+    // let price = parseInt(prompt("Số chữ của hộ gia đình:"));
+    // if (price > 400) {
+    //   console.log("Bậc 6 (401 kWh trở lên): 2.927 đồng/kWh");
+    // } else if (price > 300) {
+    //   console.log("Bậc 5 (301 đến 400 kWh): 2.834 đồng/kWh");
+    // } else if (price > 200) {
+    //   console.log("Bậc 4 (201 đến 300 kWh): 2.536 đồng/kWh");
+    // } else if (price > 100) {
+    //   console.log("Bậc 3 (101 đến 200 kWh): 2.014 đồng/kWh");
+    // } else if (price > 50) {
+    //   console.log("Bậc 2 (51 đến 100kWh): 1.734 đồng/kWh");
+    // } else {
+    //   console.log("Bậc 1. Giá điện: 1.678 đồng/kWh");
+    // }
+
+    // Cách 3 dùng switch case
+    // let price = parseInt(prompt("Số chữ của hộ gia đình:"));
+    // switch (true) {
+    //   case price <= 50:
+    //     console.log("Bậc 1. Giá điện: 1.678 đồng/kWh");
+    //     break;
+    //   case price < 100:
+    //     console.log("Bậc 2 (51 đến 100kWh): 1.734 đồng/kWh");
+    //     break;
+    //   case price < 200:
+    //     console.log("Bậc 3 (101 đến 200 kWh): 2.014 đồng/kWh");
+    //     break;
+    //   case price < 300:
+    //     console.log("Bậc 4 (201 đén 300 kwh): 2.536 đồng/kWh");
+    //     break;
+    //   case price < 400:
+    //     console.log("Bậc 5 (301 đến 400 kWh): 2.834 đồng/kWh");
+    //     break;
+    //   case price > 400:
+    //     console.log("Bậc 6 (401 kWh trở lên): 2.927 đồng/kWh");
+
+    // price < 51
+    //   ? console.log("Bậc 1. Giá điện: 1.678 đồng/kWh")
+    //   : price < 100
+    //   ? console.log("Bậc 2 (51 đến 100kWh): 1.734 đồng/kWh")
+    //   : price < 200
+    //   ? console.log("Bậc 3 (101 đến 200 kWh): 2.014 đồng/kWh")
+    //   : price < 300
+    //   ? console.log("Bậc 4 (201 đén 300 kwh): 2.536 đồng/kWh")
+    //   : price < 400
+    //   ? console.log("Bậc 5 (301 đến 400 kWh): 2.834 đồng/kWh")
+    //   : console.log("Bậc 6 (401 kWh trở lên): 2.927 đồng/kWh");
+    let sumElect = document.getElementById("result");
+    sumElect.addEventListener("click", sum);
+    function sum() {
+      let price = document.getElementById("inp").value;
+
+      if (price > 400) {
+        document.getElementById("bill").value = price * 2927;
+        document.getElementById("note").innerHTML =
+          "Bậc 6 (401 kWh trở lên): 2.927 đồng/kWh";
+      } else if (price > 300) {
+        document.getElementById("bill").value = price * 2834;
+        document.getElementById("note").innerHTML =
+          "Bậc 5 (301 đến 400 kWh): 2.834 đồng/kWh";
+      } else if (price > 200) {
+        document.getElementById("bill").value = price * 2536;
+        document.getElementById("note").innerHTML =
+          "Bậc 4 (201 đến 300 kWh): 2.536 đồng/kWh";
+      } else if (price > 100) {
+        document.getElementById("bill").value = price * 2014;
+        document.getElementById("note").innerHTML =
+          "Bậc 3 (101 đến 200 kWh): 2.014 đồng/kWh";
+      } else if (price > 50) {
+        document.getElementById("bill").value = price * 1734;
+        document.getElementById("note").innerHTML =
+          "Bậc 2 (51 đến 100kWh): 1.734 đồng/kWh";
+      } else {
+        document.getElementById("bill").value = price * 1678;
+        document.getElementById("note").innerHTML =
+          "Bậc 1. Giá điện: 1.678 đồng/kWh";
+      }
+    }
+
+    // Cách 4
+    //  console.log(
+    //   `${
+    //     price > 400
+    //       ? "Bậc 6 (401 kWh trở lên): 2.927 đồng/kWh"
+    //       : price > 300
+    //       ? "Bậc 5 (301 đến 400 kWh): 2.834 đồng/kWh"
+    //       : price > 200
+    //       ? "Bậc 4 (201 đén 300 kwh): 2.536 đồng/kWh"
+    //       : price > 100
+    //       ? "Bậc 3 (101 đến 200 kWh): 2.014 đồng/kWh"
+    //       : price > 50
+    //       ? "Bậc 2 (51 đến 100kWh): 1.734 đồng/kWh"
+    //       : "Bậc 1. Giá điện: 1.678 đồng/kWh"
+    //   }`
+    // );
+  </script>
+</html>
