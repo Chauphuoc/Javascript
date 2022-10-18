@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Cửa hàng của bạn nhận gửi bán sản phẩm cho một công ty khác và sau mỗi tháng bạn cần tính toán số tiền hoa hồng bạn nhận được. Với mức hoa hồng theo doanh số bán hàng như sau:
+5% nếu tổng doanh số nhỏ hơn hoặc bằng 100 triệu.
+10% nếu tổng doanh số nhỏ hơn hoặc bằng 300 triệu.
+20 % nếu tổng doanh số là lớn hơn 300 triệu.
+Dựa vào dữ liệu trên, bạn viết chương trình C++ để tính hoa hồng đại lý bạn sẽ nhận được. -->
+    <script>
+      let a = Number(prompt("Nhap doanh so ban hang (trieu)"));
+      if (a <= 100) {
+        alert(`So tien hoa hong la:${0.05 * a} trieu`);
+      } else if (a <= 300) {
+        alert(`So tien hoa hong la: ${0.1 * a} trieu`);
+      } else if (a > 300) {
+        alert(`So tien hoa hong la: ${0.2 * a} trieu`);
+      }
+    </script>
+  </body>
+</html>
