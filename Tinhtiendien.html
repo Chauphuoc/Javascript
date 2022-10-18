@@ -109,33 +109,63 @@
     let sumElect = document.getElementById("result");
     sumElect.addEventListener("click", sum);
     function sum() {
-      let price = document.getElementById("inp").value;
+      var price = Number(document.getElementById("inp").value);
 
-      if (price > 400) {
-        document.getElementById("bill").value = price * 2927;
-        document.getElementById("note").innerHTML =
-          "Bậc 6 (401 kWh trở lên): 2.927 đồng/kWh";
-      } else if (price > 300) {
-        document.getElementById("bill").value = price * 2834;
-        document.getElementById("note").innerHTML =
-          "Bậc 5 (301 đến 400 kWh): 2.834 đồng/kWh";
-      } else if (price > 200) {
-        document.getElementById("bill").value = price * 2536;
-        document.getElementById("note").innerHTML =
-          "Bậc 4 (201 đến 300 kWh): 2.536 đồng/kWh";
-      } else if (price > 100) {
-        document.getElementById("bill").value = price * 2014;
-        document.getElementById("note").innerHTML =
-          "Bậc 3 (101 đến 200 kWh): 2.014 đồng/kWh";
-      } else if (price > 50) {
-        document.getElementById("bill").value = price * 1734;
-        document.getElementById("note").innerHTML =
-          "Bậc 2 (51 đến 100kWh): 1.734 đồng/kWh";
-      } else {
-        document.getElementById("bill").value = price * 1678;
-        document.getElementById("note").innerHTML =
-          "Bậc 1. Giá điện: 1.678 đồng/kWh";
-      }
+      if (price <= 50) {
+        document.getElementById("bill").value = `${
+          price * 1678 + price * 1678 * 0.08
+        }`;
+      } else if (price < 101) {
+        document.getElementById("bill").value = `${
+          (price - 50) * 1734 +
+          50 * 1678 +
+          ((price - 50) * 1734 + 50 * 1678) * 0.08
+        } vnd`;
+      } else if (price < 201) {
+        document.getElementById("bill").value = `${
+          (price - 100) * 2014 +
+          50 * 1678 +
+          50 * 1734 +
+          ((price - 100) * 2014 + 50 * 1678 + 50 * 1734) * 0.08
+        } vnd`;
+      } else if (price < 301) {
+        document.getElementById("bill").value = `${
+          (price - 200) * 2536 +
+          50 * 1678 +
+          50 * 1734 +
+          100 * 2014 +
+          ((price - 200) * 2536 + 50 * 1678 + 50 * 1734 + 100 * 2014) * 0.08
+        } vnd`;
+      } else if (price < 401) {
+        document.getElementById("bill").value = `${
+          (price - 300) * 2834 +
+          50 * 1678 +
+          50 * 1734 +
+          100 * 2014 +
+          100 * 2534 +
+          ((price - 300) * 2834 +
+            50 * 1678 +
+            50 * 1734 +
+            100 * 2014 +
+            100 * 2534) *
+            0.08
+        } vnd`;
+      } else
+        document.getElementById("bill").value = `${
+          (price - 400) * 2927 +
+          50 * 1678 +
+          50 * 1734 +
+          100 * 2014 +
+          100 * 2536 +
+          100 * 2834 +
+          ((price - 400) * 2927 +
+            50 * 1678 +
+            50 * 1734 +
+            100 * 2014 +
+            100 * 2536 +
+            100 * 2834) *
+            0.08
+        } vnd`;
     }
 
     // Cách 4
