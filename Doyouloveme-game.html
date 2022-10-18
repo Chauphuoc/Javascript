@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do you love me</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+
+      justify-content: center;
+    }
+
+    button {
+      font-size: 25px;
+    }
+  </style>
+  <body>
+    <div style="margin-top: 50px">
+      <h1>Do you love me?</h1>
+      <button style="position: relative" id="subject-yes">Yes</button>
+      <button style="position: absolute; margin-left: 5px" id="subject-no">
+        No
+      </button>
+    </div>
+  </body>
+  <script>
+    document.getElementById("subject-yes").addEventListener("click", Yes);
+    document.getElementById("subject-no").addEventListener("mouseover", No);
+
+    function No() {
+      let x = Math.round(Math.ceil(Math.random() * innerHeight));
+      let y = Math.round(Math.ceil(Math.random() * innerWidth));
+      document.getElementById("subject-no").style.left = y + "px";
+      document.getElementById("subject-no").style.top = x + "px";
+    }
+    function Yes() {
+      alert("I love you too <3");
+    }
+  </script>
+</html>
