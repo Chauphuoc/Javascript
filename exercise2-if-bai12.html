@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Công thức lãi kép căn bản nhất là:
+
+FV = PV x (1 + i)^n
+
+Trong công thức lãi kép:
+
+FV: giá trị của tương lai ở năm thứ n
+PV: giá trị của số vốn tại thời điểm hiện tại
+n: số năm
+i : là lãi suất  -->
+    <div>Nhập số tiền gửi:</div>
+    <input type="text" name="" id="original-money" />
+    <div>Lãi suất năm:</div>
+    <input type="text" name="" id="rate" />
+    <div>Thời hạn gửi (năm):</div>
+    <input type="text" name="" id="years" />
+    <div>Số tiền lãi</div>
+    <input type="text" name="" id="profit" /><br />
+    <input type="button" name="" id="convert" value="Calculating" /> <br />
+
+    <script>
+      document.getElementById("convert").addEventListener("click", Calculating);
+      function Calculating() {
+        let originalMoney = Number(
+          document.getElementById("original-money").value
+        );
+        let rateBank = Number(document.getElementById("rate").value);
+        let year = Number(document.getElementById("years").value);
+
+        let Fv = originalMoney * Math.pow(1 + rateBank, year);
+        document.getElementById("profit").value = Fv;
+      }
+    </script>
+  </body>
+</html>
