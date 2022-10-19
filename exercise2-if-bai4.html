@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 5px 15px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Nhập chiều dài a:</div>
+    <input type="text" name="" id="type-Width" />
+    <div>Nhập chiều rộng b:</div>
+    <input type="text" name="" id="type-Height" /> <br />
+    <input type="button" value="Calculating" name="" id="convert" /> <br />
+    <span>Calculating Rectangle Area</span>
+    <input type="text" id="result" /> <br />
+    <script>
+      document
+        .getElementById("convert")
+        .addEventListener("click", convertResult);
+      function convertResult() {
+        let a = Number(document.getElementById("type-Width").value);
+        let b = Number(document.getElementById("type-Height").value);
+        let c = (a * b).toFixed(1);
+        document.getElementById("result").value = c;
+      }
+    </script>
+  </body>
+</html>
