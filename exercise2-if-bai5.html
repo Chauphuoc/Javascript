@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculating Triangle Area</title>
+  </head>
+  <body>
+    <div>Nhập cạnh a:</div>
+    <input type="text" name="" id="Type1" />
+    <div>Nhập cạnh b:</div>
+    <input type="text" name="" id="Type2" />
+    <div>Triangle Are</div>
+    <input type="text" name="" id="result" />
+    <input type="button" value="Calculating" name="" id="submit" />
+    <script>
+      document.getElementById("submit").addEventListener("click", CalTriangle);
+      function CalTriangle() {
+        let a = Number(document.getElementById("Type1").value);
+        let b = Number(document.getElementById("Type2").value);
+        let c = ((a * b) / 2).toFixed(2);
+        document.getElementById("result").value = c;
+      }
+    </script>
+  </body>
+</html>
