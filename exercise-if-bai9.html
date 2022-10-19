@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Nhập a:</div>
+    <input type="text" name="" id="Type-a" />
+    <div>Nhập b:</div>
+    <input type="text" name="" id="Type-b" />
+    <div>Nhập c:</div>
+    <input type="text" name="" id="Type-c" />
+    <input type="button" value="Check" name="" id="checkInf" />
+    <div id="check"></div>
+    <script>
+      document.getElementById("checkInf").addEventListener("click", Checking);
+      function Checking() {
+        let a = Number(document.getElementById("Type-a").value);
+        let b = Number(document.getElementById("Type-b").value);
+        let c = Number(document.getElementById("Type-c").value);
+        console.log(
+          `${
+            a > 0 && b > 0 && c > 0
+              ? a + b > c
+                ? b + c > a
+                  ? a + c > b
+                    ? "true"
+                    : "false"
+                  : "false"
+                : "false"
+              : "false"
+          }`
+        );
+      }
+    </script>
+  </body>
+</html>
