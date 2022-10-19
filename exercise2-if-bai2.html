@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Nhập khoảng cách m:</div>
+    <input type="text" name="" id="input1" />
+    <input type="submit" name="" id="convert" value="Convert" />
+    <div>Kết quả feet:</div>
+    <input type="text" name="" id="result" />
+    <script>
+      document
+        .getElementById("convert")
+        .addEventListener("click", inputDistance);
+      function inputDistance() {
+        let input = Number(document.getElementById("input1").value);
+        let output = input * 3.2808;
+        document.getElementById("result").value = output;
+      }
+    </script>
+  </body>
+</html>
