@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convert-degree</title>
+  </head>
+  <body>
+    <div>
+      <div>Nhập độ C</div>
+      <input type="text" name="" id="inputDegree" />
+      <input type="submit" name="" id="Convert" value="Convert" />
+      <div>Độ F</div>
+      <input type="text" name="" id="result" />
+    </div>
+    <script>
+      let inputDg = document.getElementById("Convert");
+      inputDg.addEventListener("click", submit);
+      function submit() {
+        let input = Number(document.getElementById("inputDegree").value);
+        let output = input * (9 / 5) + 32;
+        document.getElementById("result").value = output;
+      }
+    </script>
+  </body>
+</html>
