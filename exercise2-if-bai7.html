@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giải phương trình bậc 2</title>
+    <style>
+      * {
+        margin: 5px 10px;
+        font-size: 25px;
+        font-family: "Times New Roman", Times, serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ax2+bx+c=0</h1>
+    <div>Nhập a</div>
+    <input type="text" name="" id="Type-a" />
+    <div>Nhập b</div>
+    <input type="text" name="" id="Type-b" /> <br />
+    <div>Nhập c</div>
+    <input type="text" name="" id="Type-c" /> <br />
+
+    <input type="button" id="Calculating" value="Calculating" />
+    <div id="result"></div>
+    <script>
+      document
+        .getElementById("Calculating")
+        .addEventListener("click", Calculate);
+      function Calculate() {
+        let a = Number(document.getElementById("Type-a").value);
+        let b = Number(document.getElementById("Type-b").value);
+        let c = Number(document.getElementById("Type-c").value);
+        let delta = b * b - 4 * a * c;
+        // console.log(delta);
+        if (delta < 0) {
+          document.getElementById("result").innerHTML =
+            "Phương trình vô nghiệm";
+        } else if (delta == 0) {
+          document.getElementById(
+            "result"
+          ).innerHTML = `Phương trình có nghiệm kép: ${-b / (2 * a)}`;
+        } else {
+          document.getElementById(
+            "result"
+          ).innerHTML = `Phương trình có 2 nghiệm: x1=${(
+            (-b + Math.sqrt(b * b - 4 * a * c)) /
+            (2 * a)
+          ).toFixed(2)} ; x2=${(
+            (-b - Math.sqrt(b * b - 4 * a * c)) /
+            (2 * a)
+          ).toFixed(2)}`;
+        }
+      }
+    </script>
+  </body>
+</html>
