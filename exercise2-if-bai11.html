@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 10px 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Nhập dữ liệu thu nhập theo tháng để biết số thuế tạm nộp hàng tháng.
+    </h1>
+    <div>Thu nhập tháng (thường tính bằng tiền lương ghi trên hợp đồng):</div>
+    <input type="text" name="" id="salary" />
+    <div>Lương đóng bảo hiểm:</div>
+    <input type="text" name="" id="insurance" /><br />
+    <div>Mức đóng: BHXH (8%), BHYT (1.5%), BHTN (1%)</div>
+    <div id="Calculating-insurance"></div>
+    <div id="myself">Giảm trừ bản thân = 11,000,000</div>
+    <span>Bảo hiểm bắt buộc:</span>
+    <span id="result-insurance" style="font-weight: bolder; color: red"> </span>
+    <br />
+    <span>Thu nhập tính thuế:</span>
+    <span style="font-weight: bolder; color: red" id="Salary-Tax"></span>
+    <div id="tax"></div>
+    <span>Thuế thu nhập cá nhân phải nộp</span>
+    <span id="result"></span>
+    <input type="button" value="Calculating" id="Calculate" />
+
+    <script>
+      document
+        .getElementById("Calculate")
+        .addEventListener("click", Calculating);
+      function Calculating() {
+        let salary = Number(document.getElementById("salary").value);
+        let insurance = Number(document.getElementById("insurance").value);
+        let tax = insurance * 0.08 + insurance * 0.015 + insurance * 0.01;
+        document.getElementById("result-insurance").innerHTML = tax;
+        let profit = eval(salary - tax - 11000000);
+        document.getElementById("Salary-Tax").innerHTML = profit;
+        console.log(profit);
+        let a = 1000000;
+        document.getElementById("result").innerHTML = `${
+          profit <= a * 5
+            ? profit * 0.05
+            : profit > a * 5 && profit <= a * 10
+            ? profit * 0.1 - 0.25 * a
+            : a * 10 < profit && profit <= a * 18
+            ? profit * 0.15 - 0.75 * a
+            : a * 18 < profit && profit <= a * 32
+            ? profit * 0.2 - 1.65 * a
+            : a * 32 < profit && profit <= 52 * a
+            ? profit * 0.25 - 3.25 * a
+            : "Luong cao qua"
+        }
+          `;
+      }
+    </script>
+  </body>
+</html>
