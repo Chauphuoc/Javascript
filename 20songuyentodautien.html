@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number">
+    <button onclick="process()">Process</button>
+    <p id="display"></p>
+    <script>
+      function process (){
+        let numbers = Number(document.getElementById("number").value) 
+        let result = document.getElementById("display")
+        
+        
+        let mark = true
+        let n =2
+        let b = Math.sqrt(n)
+
+       if (n<1) {
+        result.innerText = `Type again`
+       }
+        else {
+          let count = 0
+          
+          while (count < numbers) {
+            mark = true
+            for (i=2;i<=Math.sqrt(n);i++) {
+              if (n%i == 0) {
+                mark = false
+                break
+              }
+            }
+            if (mark == true) {
+              count++
+              result.innerHTML += `${n}, `
+            }
+            n++
+          }
+        }
+          
+        //   // for (i=2;i<=b;i++) {
+          
+        //   // if (num%i == 0) {
+        //   //   mark = false
+        //   //   break;
+        //   // }}
+        //   i=2
+        //   while (i<=b) {
+        //     mark = true
+        //     if(num%i==0) {
+        //       mark = false
+        //       break
+        //     }
+        //     i++
+        //   }
+        //   if (mark == true) {
+        //     result.innerText = `${num} la so nguyen to`
+        //   }
+        //   else {
+        //     result.innerText = `${num} khong phai la so nguyen to`
+        //   }
+        // }
+       }
+
+       
+        
+      
+     
+
+    </script>
+</body>
+</html>
