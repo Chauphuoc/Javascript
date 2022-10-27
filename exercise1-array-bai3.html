@@ -8,18 +8,17 @@
 </head>
 <body>
     <script>
-        let n1 = 0;
-        let n2 = 1;
-        let nextNumber 
-        let array = []
-        for (i=0;i<20;i++) {
-            document.write(`${n1}, `);
-            nextNumber = n1
-            n1=n2;
-            n2=n1+nextNumber
-            array=[nextNumber,n1,n2]
+        let array = [-2,5,4,10,9]
+        let max = array[0] ;
+        for (i=1;i<array.length;i++) {
+            if (array[i]>max){
+            max=array[i]
+            }
         }
-        
+        document.write("Max:"+max+"<br>")
+        let a = array.join("+")
+        let average = eval(eval(a)/5)  
+        document.write("Average:"+average)
         
     </script>
 </body>
