@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myFunction (number) {
+            let flag = true;
+            let n = Math.sqrt(number)
+            if(number<2){
+                alert(`${number} khong phai la so nguyen to`)
+            }
+            else { 
+                for(let i=2; i<n;i++){
+                    if (number%i==0){
+                        flag = false
+                        break
+                    }
+                }
+                if (flag==false) {
+                    alert(`${number} khong la so nguyen to`)
+                }
+                else {
+                    alert(`${number} la so nguyen to`)
+                }
+            }
+        }
+        let check =Number(prompt("nhap a")) 
+        myFunction(check)
+    </script>
+    
+</body>
+</html>
