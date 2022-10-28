@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="input">
+    <div id="result"></div>
+    <script>
+        let a = Number(prompt("Nhap a"))
+        function calculating (number){
+            let result =1
+            for(i=1;i<=number;i++){
+                result = result * i
+            }
+            return result
+        }
+        document.getElementById("result").innerText = calculating(a)
+    
+    </script>
+</body>
+</html>
