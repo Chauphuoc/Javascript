@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <input type="text"oninput="alertMessage()">
+    <script>
+       
+        debugger
+        let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+        let star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+        let a = prompt("Enter your value")
+        function checkStar (a) {
+            let indexStar = 0
+            let result = ""
+            for (i=0;i<8;i++) {
+                if (a==star1[i]){
+                    indexStar = i
+                    for(j=0;j<8;j++){
+                        if(indexStar==j){
+                            result = star2[j]
+                            return result
+                        }
+                        else{
+                            result `${a} khong thuoc mang`
+                            return result
+                        }
+                    }
+                }
+                else {
+                    result = `${a} khong thuoc mang`
+                    return result
+                }
+            }
+        }
+        let confirm = checkStar (a)
+        alert(confirm)
+        
+        
+
+    </script>
+</body>
+</html>
