@@ -7,12 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input type="text" id="input1">
     <div id="result1"></div>
     <div id="result2"></div>
     <script>
         let r = Number(prompt("Nhap ban kinh"))
         
+        console.log(r);
         function parameter (a){
             let parameter = a * 3.14 * 2
             return  parameter.toFixed(2)
@@ -23,7 +24,7 @@
         }
         document.getElementById("result1").innerHTML =`Dien tich hinh tron:${area(r)}<br>` 
         document.getElementById("result2").innerHTML =`Chu vi hinh tron:${parameter(r)}<br>` 
-
+           
     </script>
 </body>
 </html>

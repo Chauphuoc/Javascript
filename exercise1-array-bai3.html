@@ -8,7 +8,12 @@
 </head>
 <body>
     <script>
-        let array = [-2,5,4,10,9]
+        let array = []
+        let n = prompt("Enter length of array:")
+        for (i=0;i<n;i++){
+            array [i] = prompt("enter your value")
+        }
+        console.log(array);
         let max = array[0] ;
         for (i=1;i<array.length;i++) {
             if (array[i]>max){

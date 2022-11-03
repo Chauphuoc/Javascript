@@ -25,13 +25,16 @@
     <input type="button" id="Calculating" value="Calculating" />
     <div id="result"></div>
     <script>
+      
       document
         .getElementById("Calculating")
         .addEventListener("click", Calculate);
+       
       function Calculate() {
         let a = Number(document.getElementById("Type-a").value);
         let b = Number(document.getElementById("Type-b").value);
         let c = Number(document.getElementById("Type-c").value);
+       
         let delta = b * b - 4 * a * c;
         // console.log(delta);
         if (delta < 0) {

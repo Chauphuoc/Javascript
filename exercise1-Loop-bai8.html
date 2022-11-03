@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="press ()">Play</button>
+    <script>
+        function press () {
+            let input = Number(prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?"))
+        let numbers = Math.floor(Math.random()*input)
+        console.log(numbers)
+        let guessNumber = Number(prompt("nhập giá trị mà người dùng đoán"))
+        
+        
+        for (i=0;i<3;i++) {
+            if (guessNumber==numbers) {
+                alert("Congratulation")
+                break
+            }
+            if (guessNumber>numbers) {
+                alert("Decrease your value")
+            }
+            if (guessNumber<numbers) {
+                alert("Increase your value")
+            }
+            guessNumber = Number(prompt("type again"))
+        }
+        document.write("you are Failed")
+    }
+        
+    </script>
+</body>
+</html>

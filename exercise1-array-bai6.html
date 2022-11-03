@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = []
+        let n = prompt("Enter your length of array:")
+        for (i=0;i<n;i++) {
+            array[i] = prompt("Enter your value:")
+        }
+        let v = prompt("Enter V:")
+        
+        for (i=0;i<n;i++) {
+            if (array[i]==v) {     
+                document.write("V is in the array")
+                break
+            }
+        }
+        
+        </script>
+</body>
+</html>

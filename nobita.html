@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body onload="goAhead ()">
+  <body onload="goAhead()">
     <img
       id="nobita"
       src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png"
@@ -37,6 +37,7 @@
       //   event co the dung cho nhieu truong hop su kien khac duoc khong, cach su dung the nao
       // tai sao khong dung number thay cho parseint duoc
       function moveSelect(event) {
+        console.log(event);
         switch (event.keyCode) {
           case 37:
             leftarrow();

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number">
+    <button onclick="process()">Process</button>
+    <p id="display"></p>
+    <script>
+        
+        let result = document.getElementById("display")
+        function process () {
+            let numbers = document.getElementById("number").value
+            
+            let mark = true
+            if (numbers<=1) {
+                `${numbers} khong phai la so nguyen to`
+            }
+            else {
+                mark = true
+                for (i=2;i<=Math.sqrt(numbers);i++) {
+                    if (numbers%i==0) {
+                        mark = false
+                        break
+                    }
+                }
+                if (mark == true) {
+                    result.innerHTML= `${numbers} la so nguyen to`
+                }
+                else {
+                    result.innerHTML= `${numbers} khong phai la so nguyen to`
+                }
+            }
+        }
+    </script>
+</body>
+</html>

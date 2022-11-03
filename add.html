@@ -7,11 +7,27 @@
     <title>Document</title>
   </head>
   <body>
+    <input type="password" name="" id="inp" />
+    <button id="unhide">Unhide</button>
     <script>
+      let hide = document.getElementById("unhide");
+      hide.addEventListener("click", myfunction);
+      function myfunction() {
+        let btn = document.getElementById("inp").type;
+        if (btn == "password") {
+          document.getElementById("inp").type = Text;
+          hide.innerHTML = "Hide";
+        } else {
+          document.getElementById("inp").type = "Password";
+          hide.innerHTML = "Unhide";
+        }
+      }
+    </script>
+    <!-- <script>
       let a = parseInt(prompt("Nhập a"));
       let b = parseInt(prompt("Nhập b"));
       let result = a + b < 4 ? "Below" : "Over";
       document.write(result);
-    </script>
+    </script> -->
   </body>
 </html>

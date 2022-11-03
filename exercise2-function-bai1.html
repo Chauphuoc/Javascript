@@ -10,18 +10,14 @@
     <input type="text" name="" id="inp" oninput="calculating()">
     <div id="result"></div>
     <script>
-        function calculating(){
-            let a = document.getElementById("inp").value
-            let b = square(a)
-            
-            document.getElementById("result").innerText = b
-        }
         function square (number){
-            let result = number * number
-            return result
+            var result = number * number;
+            return result;
         }
-       
-        
+        function calculating(){
+            let r = Number(document.getElementById("inp").value) ;
+            document.getElementById("result").innerHTML = square(r);
+        }
     </script>
 </body>
 </html>
