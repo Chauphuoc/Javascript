@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="inp" >
+        <button type="button" id="btn" onclick="addProduct()">Add</button>
+    </form>
+    <table border="1" style="border-collapse: collapse;">
+        <tbody id="start">
+          
+        </tbody>
+    </table>
+    <script>
+        class Fruit {
+            constructor (id,name){
+                this.id = id;
+                this.name = name;
+            }
+            setName (name) {
+                this.name = name
+            }
+        }
+        const arrays = [
+            new Fruit (1,"apple"),
+            new Fruit (2,"orange"),
+            new Fruit (3,"banana"),
+            new Fruit (4,"tomato"),
+            new Fruit (5,"Mango"),
+        ]
+        
+        function renderArray (){
+           
+            let newArray = arrays.map(function(product){
+            return `<tr><td>${product.id}</td><td>${product.name}</td>
+                <td><button type="button" onclick="editProduct(${product.id})">Edit</button></td>
+                <td><button type="button" onclick="removeProduct(${product.id})">Romove</button></td>`
+            })  
+            document.querySelector("#start").innerHTML = newArray.join("")
+        }
+        renderArray();
+
+        function addProduct () {
+            let name = document.querySelector("#inp").value;
+            let id = findIdmax () + 1;
+            let newItems = new Fruit (id,name);
+            arrays.push(newItems)
+            renderArray()
+        }
+
+        function findIdmax () {
+            let max = 0;
+            for (item of arrays){
+                if (item.id >max) {
+                    max = item.id
+                }
+            }
+            return max
+        }
+        
+        function removeProduct(productId) {
+            let index = arrays.findIndex(function(productId){
+                return productId
+            })
+            arrays.splice(index,1)
+            renderArray ()
+        }
+
+        function editProduct (productId) {
+            for (item of arrays){
+                if (item.id == productId){
+                    item.setName(prompt("Nhap ten"))
+                }
+            }
+            renderArray ()
+        }
+        
+        
+        
+        
+        
+            
+     
+    </script>
+</body>
+</html>
