@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  onload="fake()" style="text-align: center;"></body>
+<h2>Faking Textarea</h2>
+<form>
+    <label>
+        <textarea cols="30" rows="5" id="txt"></textarea>
+    </label>
+</form>
+    <script>
+        let array = ['T','Ô','I','L','À','M'];
+        let str = "";
+        
+        
+        function fake()
+            {
+              let text = document.querySelector("#txt").value;
+              let j = text.length;
+              let string = ""
+              if (j>0) {
+                for(i=0;i<j;i++) {
+                    string += array[i]
+                    if(i == array.length) {
+                        document.querySelector("#txt").value="";
+                        string = ""
+                    }
+                }
+              }
+              document.querySelector("#txt").value = string;
+              
+              setTimeout(fake,1)
+                }
+
+                
+
+    </script>
+</body>
+   
+
+</html>
