@@ -1,116 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <style>
-    body {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-      background: linear-gradient(
-        to right,
-        rgb(61, 61, 235),
-        rgb(127, 173, 216)
-      );
-      display: flex;
-
-      justify-content: center;
-    }
-
-    .screen {
-      width: 412px;
-      height: 70px;
-
-      border-bottom: 3px solid rgb(202, 198, 198);
-    }
-    .container {
-      width: 412px;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-      margin-top: 100px;
-      border: 2px solid grey;
-      box-shadow: 0 0 30px rgb(95, 93, 93);
-    }
-    .keyboard {
-      width: 100%;
-      display: grid;
-
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    button {
-      height: 60px;
-      border: 1px solid white;
-      cursor: pointer;
-      transition: background-color 0.5s;
-      font-weight: bold;
-    }
-    button:hover {
-      background-color: rgb(90, 88, 88);
-    }
-    .btn {
-      box-sizing: border-box;
-      width: 412px;
-      height: 100%;
-      border: none;
-      font-size: 35px;
-      padding-left: 10px;
-    }
-    .item-AC {
-      grid-column: 1 / span 2;
-      background-color: pink;
-    }
-  </style>
-  <body>
-    <div class="container">
-      <div class="screen">
-        <input class="btn" type="text" name="" id="inp" />
-      </div>
-
-      <div class="keyboard">
-        <button onclick="cleartotal ()" id="" class="item-AC" value="AC">
-          AC
-        </button>
-        <button onclick="clear1 ()" id="" class="" value="">DEL</button>
-        <button onclick="Num('+')" id="" class="" value="+">+</button>
-        <button onclick="Num('1')" id="" class="" value="1">1</button>
-        <button onclick="Num('2')" id="" class="" value="2">2</button>
-        <button onclick="Num('3')" id="" class="" value="3">3</button>
-        <button onclick="Num('-')" id="" class="" value="-">-</button>
-        <button onclick="Num('4')" id="" class="" value="4">4</button>
-        <button onclick="Num('5')" id="" class="" value="5">5</button>
-        <button onclick="Num('6')" id="" class="" value="6">6</button>
-        <button onclick="Num('x')" id="" class="" value="*">*</button>
-        <button onclick="Num('7')" id="" class="" value="7">7</button>
-        <button onclick="Num('8')" id="" class="" value="8">8</button>
-        <button onclick="Num('9')" id="" class="" value="9">9</button>
-        <button onclick="Num('/')" id="" class="" value="/">/</button>
-        <button onclick="Num('.')" id="" class="" value=".">.</button>
-        <button onclick="Num('0')" id="" class="" value="0">0</button>
-        <button onclick="Num('0')" id="" class="" value="0">00</button>
-        <button onclick="equal()" id="equal" class="" value="=">=</button>
-        <!-- lay gia tri o num ?? 
-        co luu y gi khi dat ten ham hay khong-->
-      </div>
-    </div>
-    <script>
-      function Num(event) {
-        document.getElementById("inp").value += event;
-      }
-      function equal() {
-        let input1 = document.getElementById("inp").value;
-        let output = eval(input1);
-
-        document.getElementById("inp").value = output;
-      }
-      function cleartotal() {
-        document.getElementById("inp").value = "";
-      }
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+  <script>
+    var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Hello World",10,50);
+  </script>
+</body>
 </html>

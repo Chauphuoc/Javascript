@@ -8,15 +8,31 @@
   </head>
   <body>
     <script>
-      var x;
-      var y;
+      // var x;
+      // var y;
 
-      let width = parseInt(x);
-      let height = parseInt(y);
-      width = prompt("Nhập chiều rộng:");
-      height = prompt("Nhập chiều dài:");
-      let area = width * height;
-      document.write("Diện tích hình chữ nhật là:" + area);
+      // let width = parseInt(x);
+      // let height = parseInt(y);
+      // width = prompt("Nhập chiều rộng:");
+      // height = prompt("Nhập chiều dài:");
+      // let area = width * height;
+      // document.write("Diện tích hình chữ nhật là:" + area);
+      let n =2;
+      let flag = true;
+      debugger
+      while (n<100){
+        // flag=true
+        for(i=2;i<=Math.sqrt(n);i++){
+          if (n%i==0){
+            flag = false;
+            break;
+          }
+        }
+        if (flag==true){
+          console.log(n);
+        }
+        n++;
+      }
     </script>
   </body>
 </html>

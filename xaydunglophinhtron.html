@@ -23,7 +23,7 @@
         // console.log(`Dien tich: ${area}, Ban kinh: ${radius}`);
 
         class Cricle {
-            constructor(radius) {
+            constructor(radius) { 
                 this.radius = radius;
             }
             getRadius(radius) {
@@ -34,7 +34,9 @@
             }
         }
         let cricle = new Cricle (2)
-        console.log(`Dien tich: ${cricle.getArea(2)},ban kinh la:${cricle.getRadius(2)}`);
+        let radius= cricle.getRadius(2)
+        let area = cricle.getArea(2)
+        console.log(`Dien tich: ${area},ban kinh la:${radius}`);
     </script>
 </body>
 </html>
